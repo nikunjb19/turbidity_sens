@@ -1,0 +1,1278 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F1509 ]
+[d frameptr 6 ]
+"67 C:\Users\nikun\MPLABXProjects\sense_mbus.X\mcc_generated_files/examples/i2c_master_example.c
+[e E355 . `uc
+I2C_NOERR 0
+I2C_BUSY 1
+I2C_FAIL 2
+]
+"68
+[e E360 . `uc
+I2C_STOP 1
+I2C_RESTART_READ 2
+I2C_RESTART_WRITE 3
+I2C_CONTINUE 4
+I2C_RESET_LINK 5
+]
+"146 C:\Users\nikun\MPLABXProjects\sense_mbus.X\mcc_generated_files/i2c_master.c
+[e E3885 . `uc
+I2C_IDLE 0
+I2C_SEND_ADR_READ 1
+I2C_SEND_ADR_WRITE 2
+I2C_TX 3
+I2C_RX 4
+I2C_RCEN 5
+I2C_TX_EMPTY 6
+I2C_SEND_RESTART_READ 7
+I2C_SEND_RESTART_WRITE 8
+I2C_SEND_RESTART 9
+I2C_SEND_STOP 10
+I2C_RX_ACK 11
+I2C_RX_NACK_STOP 12
+I2C_RX_NACK_RESTART 13
+I2C_RESET 14
+I2C_ADDRESS_NACK 15
+]
+"165
+[e E360 . `uc
+I2C_STOP 1
+I2C_RESTART_READ 2
+I2C_RESTART_WRITE 3
+I2C_CONTINUE 4
+I2C_RESET_LINK 5
+]
+[e E355 . `uc
+I2C_NOERR 0
+I2C_BUSY 1
+I2C_FAIL 2
+]
+"191
+[e E3903 . `uc
+I2C_DATA_COMPLETE 0
+I2C_WRITE_COLLISION 1
+I2C_ADDR_NACK 2
+I2C_DATA_NACK 3
+I2C_TIMEOUT 4
+I2C_NULL 5
+]
+"4 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+"43 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+"29 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\logf.c
+[v _logf logf `(f  1 e 4 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"242
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+"54 C:\Users\nikun\MPLABXProjects\sense_mbus.X\main.c
+[v _map map `(l  1 e 4 0 ]
+"103
+[v _MCP3422_Write MCP3422_Write `(v  1 s 1 MCP3422_Write ]
+"108
+[v _MCP3422_Read MCP3422_Read `(v  1 s 1 MCP3422_Read ]
+"113
+[v _MCP3422_ReadVoltage MCP3422_ReadVoltage `(f  1 s 4 MCP3422_ReadVoltage ]
+"134
+[v _get_ntc_temperature get_ntc_temperature `(v  1 e 1 0 ]
+"148
+[v _main main `(v  1 e 1 0 ]
+"88 C:\Users\nikun\MPLABXProjects\sense_mbus.X\mcc_generated_files/eusart.c
+[v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
+"240
+[v _EUSART_RxDataHandler EUSART_RxDataHandler `(v  1 e 1 0 ]
+"250
+[v _EUSART_DefaultFramingErrorHandler EUSART_DefaultFramingErrorHandler `(v  1 e 1 0 ]
+"252
+[v _EUSART_DefaultOverrunErrorHandler EUSART_DefaultOverrunErrorHandler `(v  1 e 1 0 ]
+"260
+[v _EUSART_DefaultErrorHandler EUSART_DefaultErrorHandler `(v  1 e 1 0 ]
+"264
+[v _EUSART_SetFramingErrorHandler EUSART_SetFramingErrorHandler `(v  1 e 1 0 ]
+"268
+[v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
+"272
+[v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
+"276
+[v _EUSART_SetTxInterruptHandler EUSART_SetTxInterruptHandler `(v  1 e 1 0 ]
+"280
+[v _EUSART_SetRxInterruptHandler EUSART_SetRxInterruptHandler `(v  1 e 1 0 ]
+"111 C:\Users\nikun\MPLABXProjects\sense_mbus.X\mcc_generated_files/examples/i2c_master_example.c
+[v _I2C_WriteNBytes I2C_WriteNBytes `(v  1 e 1 0 ]
+"120
+[v _I2C_ReadNBytes I2C_ReadNBytes `(v  1 e 1 0 ]
+"142
+[v _rd1RegCompleteHandler rd1RegCompleteHandler `(E360  1 s 1 rd1RegCompleteHandler ]
+"149
+[v _rd2RegCompleteHandler rd2RegCompleteHandler `(E360  1 s 1 rd2RegCompleteHandler ]
+"156
+[v _wr1RegCompleteHandler wr1RegCompleteHandler `(E360  1 s 1 wr1RegCompleteHandler ]
+"163
+[v _wr2RegCompleteHandler wr2RegCompleteHandler `(E360  1 s 1 wr2RegCompleteHandler ]
+"170
+[v _rdBlkRegCompleteHandler rdBlkRegCompleteHandler `(E360  1 s 1 rdBlkRegCompleteHandler ]
+"167 C:\Users\nikun\MPLABXProjects\sense_mbus.X\mcc_generated_files/i2c_master.c
+[v _I2C_Initialize I2C_Initialize `(v  1 e 1 0 ]
+"176
+[v _I2C_Open I2C_Open `(E355  1 e 1 0 ]
+"209
+[v _I2C_Close I2C_Close `(E355  1 e 1 0 ]
+"224
+[v _I2C_MasterOperation I2C_MasterOperation `(E355  1 e 1 0 ]
+"246
+[v _I2C_MasterRead I2C_MasterRead `(E355  1 e 1 0 ]
+"251
+[v _I2C_MasterWrite I2C_MasterWrite `(E355  1 e 1 0 ]
+"263
+[v _I2C_SetBuffer I2C_SetBuffer `(v  1 e 1 0 ]
+"273
+[v _I2C_SetDataCompleteCallback I2C_SetDataCompleteCallback `(v  1 e 1 0 ]
+"283
+[v _I2C_SetAddressNackCallback I2C_SetAddressNackCallback `(v  1 e 1 0 ]
+"298
+[v _I2C_SetCallback I2C_SetCallback `(v  1 s 1 I2C_SetCallback ]
+"312
+[v _I2C_Poller I2C_Poller `(v  1 s 1 I2C_Poller ]
+"321
+[v _I2C_MasterFsm I2C_MasterFsm `T(v  1 s 1 I2C_MasterFsm ]
+"333
+[v _I2C_DO_IDLE I2C_DO_IDLE `(E3885  1 s 1 I2C_DO_IDLE ]
+"340
+[v _I2C_DO_SEND_ADR_READ I2C_DO_SEND_ADR_READ `(E3885  1 s 1 I2C_DO_SEND_ADR_READ ]
+"347
+[v _I2C_DO_SEND_ADR_WRITE I2C_DO_SEND_ADR_WRITE `(E3885  1 s 1 I2C_DO_SEND_ADR_WRITE ]
+"354
+[v _I2C_DO_TX I2C_DO_TX `(E3885  1 s 1 I2C_DO_TX ]
+"378
+[v _I2C_DO_RX I2C_DO_RX `(E3885  1 s 1 I2C_DO_RX ]
+"402
+[v _I2C_DO_RCEN I2C_DO_RCEN `(E3885  1 s 1 I2C_DO_RCEN ]
+"409
+[v _I2C_DO_TX_EMPTY I2C_DO_TX_EMPTY `(E3885  1 s 1 I2C_DO_TX_EMPTY ]
+"450
+[v _I2C_DO_SEND_RESTART_READ I2C_DO_SEND_RESTART_READ `(E3885  1 s 1 I2C_DO_SEND_RESTART_READ ]
+"456
+[v _I2C_DO_SEND_RESTART_WRITE I2C_DO_SEND_RESTART_WRITE `(E3885  1 s 1 I2C_DO_SEND_RESTART_WRITE ]
+"463
+[v _I2C_DO_SEND_RESTART I2C_DO_SEND_RESTART `(E3885  1 s 1 I2C_DO_SEND_RESTART ]
+"469
+[v _I2C_DO_SEND_STOP I2C_DO_SEND_STOP `(E3885  1 s 1 I2C_DO_SEND_STOP ]
+"475
+[v _I2C_DO_RX_ACK I2C_DO_RX_ACK `(E3885  1 s 1 I2C_DO_RX_ACK ]
+"482
+[v _I2C_DO_RX_NACK_STOP I2C_DO_RX_NACK_STOP `(E3885  1 s 1 I2C_DO_RX_NACK_STOP ]
+"488
+[v _I2C_DO_RX_NACK_RESTART I2C_DO_RX_NACK_RESTART `(E3885  1 s 1 I2C_DO_RX_NACK_RESTART ]
+"494
+[v _I2C_DO_RESET I2C_DO_RESET `(E3885  1 s 1 I2C_DO_RESET ]
+"500
+[v _I2C_DO_ADDRESS_NACK I2C_DO_ADDRESS_NACK `(E3885  1 s 1 I2C_DO_ADDRESS_NACK ]
+"520
+[v _I2C_CallbackReturnStop I2C_CallbackReturnStop `(E360  1 e 1 0 ]
+"525
+[v _I2C_CallbackReturnReset I2C_CallbackReturnReset `(E360  1 e 1 0 ]
+"543
+[v _I2C_MasterOpen I2C_MasterOpen `T(a  1 s 1 I2C_MasterOpen ]
+"557
+[v _I2C_MasterClose I2C_MasterClose `T(v  1 s 1 I2C_MasterClose ]
+"563
+[v _I2C_MasterGetRxData I2C_MasterGetRxData `T(uc  1 s 1 I2C_MasterGetRxData ]
+"568
+[v _I2C_MasterSendTxData I2C_MasterSendTxData `T(v  1 s 1 I2C_MasterSendTxData ]
+"573
+[v _I2C_MasterEnableRestart I2C_MasterEnableRestart `T(v  1 s 1 I2C_MasterEnableRestart ]
+"578
+[v _I2C_MasterDisableRestart I2C_MasterDisableRestart `T(v  1 s 1 I2C_MasterDisableRestart ]
+"583
+[v _I2C_MasterStartRx I2C_MasterStartRx `T(v  1 s 1 I2C_MasterStartRx ]
+"588
+[v _I2C_MasterStart I2C_MasterStart `T(v  1 s 1 I2C_MasterStart ]
+"593
+[v _I2C_MasterStop I2C_MasterStop `T(v  1 s 1 I2C_MasterStop ]
+"598
+[v _I2C_MasterIsNack I2C_MasterIsNack `T(a  1 s 1 I2C_MasterIsNack ]
+"603
+[v _I2C_MasterSendAck I2C_MasterSendAck `T(v  1 s 1 I2C_MasterSendAck ]
+"609
+[v _I2C_MasterSendNack I2C_MasterSendNack `T(v  1 s 1 I2C_MasterSendNack ]
+"615
+[v _I2C_MasterClearBusCollision I2C_MasterClearBusCollision `T(v  1 s 1 I2C_MasterClearBusCollision ]
+"625
+[v _I2C_MasterEnableIrq I2C_MasterEnableIrq `T(v  1 s 1 I2C_MasterEnableIrq ]
+"635
+[v _I2C_MasterDisableIrq I2C_MasterDisableIrq `T(v  1 s 1 I2C_MasterDisableIrq ]
+"640
+[v _I2C_MasterClearIrq I2C_MasterClearIrq `T(v  1 s 1 I2C_MasterClearIrq ]
+"645
+[v _I2C_MasterSetIrq I2C_MasterSetIrq `T(v  1 s 1 I2C_MasterSetIrq ]
+"650
+[v _I2C_MasterWaitForEvent I2C_MasterWaitForEvent `T(v  1 s 1 I2C_MasterWaitForEvent ]
+"52 C:\Users\nikun\MPLABXProjects\sense_mbus.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
+"50 C:\Users\nikun\MPLABXProjects\sense_mbus.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"62
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"70
+[v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
+"58 C:\Users\nikun\MPLABXProjects\sense_mbus.X\mcc_generated_files/memory.c
+[v _FLASH_ReadWord FLASH_ReadWord `(us  1 e 2 0 ]
+"94
+[v _FLASH_WriteBlock FLASH_WriteBlock `(c  1 e 1 0 ]
+"148
+[v _FLASH_EraseBlock FLASH_EraseBlock `(v  1 e 1 0 ]
+"55 C:\Users\nikun\MPLABXProjects\sense_mbus.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"64 C:\Users\nikun\MPLABXProjects\sense_mbus.X\mcc_generated_files/tmr0.c
+[v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
+"108
+[v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
+"123
+[v _TMR0_CallBack TMR0_CallBack `(v  1 e 1 0 ]
+"133
+[v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
+"137
+[v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
+"65 C:\Users\nikun\MPLABXProjects\sense_mbus.X\mcc_generated_files/tmr1.c
+[v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
+"121
+[v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
+"158
+[v _TMR1_ISR TMR1_ISR `(v  1 e 1 0 ]
+"170
+[v _TMR1_CallBack TMR1_CallBack `(v  1 e 1 0 ]
+"179
+[v _TMR1_SetInterruptHandler TMR1_SetInterruptHandler `(v  1 e 1 0 ]
+"17 C:\Users\nikun\MPLABXProjects\sense_mbus.X\modbus_slave.c
+[v _InitModbusSlave InitModbusSlave `(v  1 e 1 0 ]
+"28
+[v _calculate_crc calculate_crc `(v  1 e 1 0 ]
+"45
+[v _mbus_rx_handler mbus_rx_handler `(v  1 e 1 0 ]
+"64
+[v _mbus_tx_handler mbus_tx_handler `(v  1 e 1 0 ]
+"82
+[v _mbus_timer_handler mbus_timer_handler `(v  1 e 1 0 ]
+"88
+[v _ModbusSlaveProcessReceivedQuery ModbusSlaveProcessReceivedQuery `(v  1 e 1 0 ]
+[s S153 . 1 `uc 1 IOCIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 IOCIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"375 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1509.h
+[s S162 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 T0IE 1 0 :1:5 
+]
+[u S167 . 1 `S153 1 . 1 0 `S162 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES167  1 e 1 @11 ]
+[s S210 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 SSP1IF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 TMR1GIF 1 0 :1:7 
+]
+"598
+[u S219 . 1 `S210 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES219  1 e 1 @17 ]
+"722
+[v _TMR0 TMR0 `VEuc  1 e 1 @21 ]
+"749
+[v _TMR1L TMR1L `VEuc  1 e 1 @22 ]
+"769
+[v _TMR1H TMR1H `VEuc  1 e 1 @23 ]
+"789
+[v _T1CON T1CON `VEuc  1 e 1 @24 ]
+[s S1152 . 1 `uc 1 TMR1ON 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 nT1SYNC 1 0 :1:2 
+`uc 1 T1OSCEN 1 0 :1:3 
+`uc 1 T1CKPS 1 0 :2:4 
+`uc 1 TMR1CS 1 0 :2:6 
+]
+"811
+[s S1159 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 T1CKPS0 1 0 :1:4 
+`uc 1 T1CKPS1 1 0 :1:5 
+`uc 1 TMR1CS0 1 0 :1:6 
+`uc 1 TMR1CS1 1 0 :1:7 
+]
+[u S1165 . 1 `S1152 1 . 1 0 `S1159 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES1165  1 e 1 @24 ]
+"861
+[v _T1GCON T1GCON `VEuc  1 e 1 @25 ]
+"1042
+[v _TRISA TRISA `VEuc  1 e 1 @140 ]
+"1092
+[v _TRISB TRISB `VEuc  1 e 1 @141 ]
+"1131
+[v _TRISC TRISC `VEuc  1 e 1 @142 ]
+[s S189 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 SSP1IE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+`uc 1 TMR1GIE 1 0 :1:7 
+]
+"1210
+[u S198 . 1 `S189 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES198  1 e 1 @145 ]
+"1334
+[v _OPTION_REG OPTION_REG `VEuc  1 e 1 @149 ]
+[s S281 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 TMR0SE 1 0 :1:4 
+`uc 1 TMR0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nWPUEN 1 0 :1:7 
+]
+"1357
+[s S288 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+]
+[u S295 . 1 `S281 1 . 1 0 `S288 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES295  1 e 1 @149 ]
+"1474
+[v _WDTCON WDTCON `VEuc  1 e 1 @151 ]
+"1533
+[v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
+"1867
+[v _LATA LATA `VEuc  1 e 1 @268 ]
+"1912
+[v _LATB LATB `VEuc  1 e 1 @269 ]
+"1951
+[v _LATC LATC `VEuc  1 e 1 @270 ]
+[s S1423 . 1 `uc 1 LATC0 1 0 :1:0 
+`uc 1 LATC1 1 0 :1:1 
+`uc 1 LATC2 1 0 :1:2 
+`uc 1 LATC3 1 0 :1:3 
+`uc 1 LATC4 1 0 :1:4 
+`uc 1 LATC5 1 0 :1:5 
+`uc 1 LATC6 1 0 :1:6 
+`uc 1 LATC7 1 0 :1:7 
+]
+"1968
+[u S1432 . 1 `S1423 1 . 1 0 ]
+[v _LATCbits LATCbits `VES1432  1 e 1 @270 ]
+"2297
+[v _BORCON BORCON `VEuc  1 e 1 @278 ]
+"2499
+[v _APFCON APFCON `VEuc  1 e 1 @285 ]
+"2546
+[v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
+"2593
+[v _ANSELB ANSELB `VEuc  1 e 1 @397 ]
+"2629
+[v _ANSELC ANSELC `VEuc  1 e 1 @398 ]
+"2695
+[v _PMADRL PMADRL `VEuc  1 e 1 @401 ]
+"2715
+[v _PMADRH PMADRH `VEuc  1 e 1 @402 ]
+"2742
+[v _PMDATL PMDATL `VEuc  1 e 1 @403 ]
+"2762
+[v _PMDATH PMDATH `VEuc  1 e 1 @404 ]
+[s S1321 . 1 `uc 1 RD 1 0 :1:0 
+`uc 1 WR 1 0 :1:1 
+`uc 1 WREN 1 0 :1:2 
+`uc 1 WRERR 1 0 :1:3 
+`uc 1 FREE 1 0 :1:4 
+`uc 1 LWLO 1 0 :1:5 
+`uc 1 CFGS 1 0 :1:6 
+]
+"2798
+[u S1329 . 1 `S1321 1 . 1 0 ]
+[v _PMCON1bits PMCON1bits `VES1329  1 e 1 @405 ]
+"2838
+[v _PMCON2 PMCON2 `VEuc  1 e 1 @406 ]
+"2879
+[v _RCREG RCREG `VEuc  1 e 1 @409 ]
+"2899
+[v _TXREG TXREG `VEuc  1 e 1 @410 ]
+"2926
+[v _SPBRGL SPBRGL `VEuc  1 e 1 @411 ]
+"2946
+[v _SPBRGH SPBRGH `VEuc  1 e 1 @412 ]
+"2966
+[v _RCSTA RCSTA `VEuc  1 e 1 @413 ]
+"3028
+[v _TXSTA TXSTA `VEuc  1 e 1 @414 ]
+[s S986 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"3045
+[u S995 . 1 `S986 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES995  1 e 1 @414 ]
+"3090
+[v _BAUDCON BAUDCON `VEuc  1 e 1 @415 ]
+"3142
+[v _WPUA WPUA `VEuc  1 e 1 @524 ]
+"3200
+[v _WPUB WPUB `VEuc  1 e 1 @525 ]
+"3248
+[v _SSP1BUF SSP1BUF `VEuc  1 e 1 @529 ]
+"3286
+[v _SSP1ADD SSP1ADD `VEuc  1 e 1 @530 ]
+"3362
+[v _SSP1STAT SSP1STAT `VEuc  1 e 1 @532 ]
+"3484
+[v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @533 ]
+[s S473 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"3513
+[s S482 . 1 `uc 1 SSPM 1 0 :4:0 
+]
+[u S484 . 1 `S473 1 . 1 0 `S482 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES484  1 e 1 @533 ]
+"3688
+[v _SSP1CON2 SSP1CON2 `VEuc  1 e 1 @534 ]
+[s S638 . 1 `uc 1 SEN 1 0 :1:0 
+`uc 1 RSEN 1 0 :1:1 
+`uc 1 PEN 1 0 :1:2 
+`uc 1 RCEN 1 0 :1:3 
+`uc 1 ACKEN 1 0 :1:4 
+`uc 1 ACKDT 1 0 :1:5 
+`uc 1 ACKSTAT 1 0 :1:6 
+`uc 1 GCEN 1 0 :1:7 
+]
+"3710
+[u S647 . 1 `S638 1 . 1 0 ]
+[v _SSP1CON2bits SSP1CON2bits `VES647  1 e 1 @534 ]
+"3 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\errno.c
+[v _errno errno `i  1 e 2 0 ]
+"52 C:\Users\nikun\MPLABXProjects\sense_mbus.X\main.c
+[v _HEFregion HEFregion `DC[32]i  1 e 64 @8160 ]
+"77
+[v _bCalMode bCalMode `a  1 e 1 0 ]
+"94
+[v _tempNTC tempNTC `f  1 e 4 0 ]
+"62 C:\Users\nikun\MPLABXProjects\sense_mbus.X\mcc_generated_files/eusart.c
+[v _eusartTxHead eusartTxHead `VEuc  1 e 1 0 ]
+"63
+[v _eusartTxTail eusartTxTail `VEuc  1 e 1 0 ]
+"64
+[v _eusartTxBuffer eusartTxBuffer `VE[64]uc  1 e 64 0 ]
+"65
+[v _eusartTxBufferRemaining eusartTxBufferRemaining `VEuc  1 e 1 0 ]
+"67
+[v _eusartRxHead eusartRxHead `VEuc  1 e 1 0 ]
+"68
+[v _eusartRxTail eusartRxTail `VEuc  1 e 1 0 ]
+"69
+[v _eusartRxBuffer eusartRxBuffer `VE[16]uc  1 e 16 0 ]
+[s S906 . 1 `uc 1 perr 1 0 :1:0 
+`uc 1 ferr 1 0 :1:1 
+`uc 1 oerr 1 0 :1:2 
+`uc 1 reserved 1 0 :5:3 
+]
+"70
+[u S911 . 1 `S906 1 . 1 0 `uc 1 status 1 0 ]
+[v _eusartRxStatusBuffer eusartRxStatusBuffer `VE[16]S911  1 e 16 0 ]
+"71
+[v _eusartRxCount eusartRxCount `VEuc  1 e 1 0 ]
+"72
+[v _eusartRxLastError eusartRxLastError `VES911  1 e 1 0 ]
+"77
+[v _EUSART_TxDefaultInterruptHandler EUSART_TxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
+"78
+[v _EUSART_RxDefaultInterruptHandler EUSART_RxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
+"80
+[v _EUSART_FramingErrorHandler EUSART_FramingErrorHandler `*.37(v  1 e 2 0 ]
+"81
+[v _EUSART_OverrunErrorHandler EUSART_OverrunErrorHandler `*.37(v  1 e 2 0 ]
+"82
+[v _EUSART_ErrorHandler EUSART_ErrorHandler `*.37(v  1 e 2 0 ]
+"146 C:\Users\nikun\MPLABXProjects\sense_mbus.X\mcc_generated_files/i2c_master.c
+[v _i2c_fsmStateTable i2c_fsmStateTable `DC[16]*.37(E3885  1 e 32 0 ]
+[s S447 . 29 `[6]*.37(E360 1 callbackTable 12 0 `[6]*.1v 1 callbackPayload 6 12 `us 1 time_out 2 18 `us 1 time_out_value 2 20 `uc 1 address 1 22 `*.4uc 1 data_ptr 1 23 `ui 1 data_length 2 24 `E3885 1 state 1 26 `E355 1 error 1 27 `uc 1 addressNackCheck 1 28 :1:0 
+`uc 1 busy 1 28 :1:1 
+`uc 1 inUse 1 28 :1:2 
+`uc 1 bufferFree 1 28 :1:3 
+]
+"165
+[v _I2C_Status I2C_Status `S447  1 e 29 0 ]
+"58 C:\Users\nikun\MPLABXProjects\sense_mbus.X\mcc_generated_files/tmr0.c
+[v _timer0ReloadVal timer0ReloadVal `VEuc  1 e 1 0 ]
+"59
+[v _TMR0_InterruptHandler TMR0_InterruptHandler `*.37(v  1 e 2 0 ]
+"58 C:\Users\nikun\MPLABXProjects\sense_mbus.X\mcc_generated_files/tmr1.c
+[v _timer1ReloadVal timer1ReloadVal `VEus  1 e 2 0 ]
+"59
+[v _TMR1_InterruptHandler TMR1_InterruptHandler `*.37(v  1 e 2 0 ]
+"6 C:\Users\nikun\MPLABXProjects\sense_mbus.X\modbus_slave.c
+[v _crcModbusSlave crcModbusSlave `us  1 s 2 crcModbusSlave ]
+[s S1444 MODBUS_BITS 2 `uc 1 busyProcessing 1 0 :1:0 
+`uc 1 processTimeOut 1 0 :1:1 
+`uc 1 processSuccess 1 0 :1:2 
+`uc 1 error 1 0 :1:3 
+`uc 1 responseReceived 1 0 :1:4 
+`uc 1 rsved1 1 0 :1:5 
+`uc 1 rsved2 1 0 :1:6 
+`uc 1 rsved3 1 0 :1:7 
+`uc 1 rsved4 1 1 :1:0 
+`uc 1 rsved5 1 1 :1:1 
+`uc 1 rsved6 1 1 :1:2 
+`uc 1 rsved7 1 1 :1:3 
+`uc 1 rsved8 1 1 :1:4 
+`uc 1 rsved9 1 1 :1:5 
+`uc 1 rsved10 1 1 :1:6 
+`uc 1 rsved11 1 1 :1:7 
+]
+"11
+[u S1461 . 2 `ui 1 all 2 0 `S1444 1 bitValue 2 0 ]
+[s S1464 . 45 `[8]us 1 ModbusHoldingRegister 16 0 `[22]uc 1 ModbusFrame 22 16 `uc 1 TxPointer 1 38 `uc 1 RxPointer 1 39 `uc 1 TotalTxValue 1 40 `uc 1 TotalRxValue 1 41 `S1461 1 flags 2 42 `uc 1 address 1 44 ]
+[v _modbusSlaveData modbusSlaveData `VES1464  1 e 45 0 ]
+"148 C:\Users\nikun\MPLABXProjects\sense_mbus.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"153
+[v main@u16CalBuffer u16CalBuffer `[8]us  1 a 16 6 ]
+"151
+[v main@fTdVoltage fTdVoltage `f  1 a 4 22 ]
+"150
+[v main@fNtcVoltage fNtcVoltage `f  1 a 4 2 ]
+"152
+[v main@u16TdVal u16TdVal `us  1 a 2 0 ]
+"296
+} 0
+"54
+[v _map map `(l  1 e 4 0 ]
+{
+[v map@x x `f  1 p 4 0 ]
+[v map@in_min in_min `l  1 p 4 4 ]
+[v map@in_max in_max `l  1 p 4 8 ]
+[v map@out_min out_min `l  1 p 4 12 ]
+[v map@out_max out_max `l  1 p 4 16 ]
+"56
+} 0
+"43 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+{
+"45
+[v ___fltol@exp1 exp1 `uc  1 a 1 65 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 64 ]
+"43
+[v ___fltol@f1 f1 `d  1 p 4 55 ]
+"70
+} 0
+"134 C:\Users\nikun\MPLABXProjects\sense_mbus.X\main.c
+[v _get_ntc_temperature get_ntc_temperature `(v  1 e 1 0 ]
+{
+"138
+[v get_ntc_temperature@temp temp `f  1 a 4 74 ]
+"137
+[v get_ntc_temperature@rntc rntc `f  1 a 4 66 ]
+"134
+[v get_ntc_temperature@adcVoltage adcVoltage `f  1 p 4 67 ]
+"146
+} 0
+"29 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\logf.c
+[v _logf logf `(f  1 e 4 0 ]
+{
+"33
+[v logf@ix ix `ul  1 a 4 62 ]
+"32
+[v logf@f f `f  1 a 4 58 ]
+[u S1998 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+"31
+[v logf@u u `S1998  1 a 4 54 ]
+"32
+[v logf@w w `f  1 a 4 46 ]
+[v logf@z z `f  1 a 4 42 ]
+[v logf@s s `f  1 a 4 38 ]
+[v logf@dk dk `f  1 a 4 34 ]
+[v logf@hfsq hfsq `f  1 a 4 30 ]
+[v logf@t2 t2 `f  1 a 4 8 ]
+[v logf@t1 t1 `f  1 a 4 4 ]
+[v logf@R R `f  1 a 4 0 ]
+"34
+[v logf@k k `i  1 a 2 28 ]
+"29
+[v logf@x x `f  1 p 4 55 ]
+"30
+[v logf@F472 F472 `S1998  1 s 4 F472 ]
+"72
+} 0
+"242 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\sprcadd.c
+[v ___flsub __flsub `(d  1 e 4 0 ]
+{
+[v ___flsub@a a `d  1 p 4 0 ]
+[v ___flsub@b b `d  1 p 4 4 ]
+"250
+} 0
+"10
+[v ___fladd __fladd `(d  1 e 4 0 ]
+{
+"17
+[v ___fladd@grs grs `uc  1 a 1 42 ]
+"15
+[v ___fladd@bexp bexp `uc  1 a 1 41 ]
+"16
+[v ___fladd@aexp aexp `uc  1 a 1 40 ]
+"13
+[v ___fladd@signs signs `uc  1 a 1 39 ]
+"10
+[v ___fladd@b b `d  1 p 4 23 ]
+[v ___fladd@a a `d  1 p 4 27 ]
+"237
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+{
+"21
+[v ___fldiv@grs grs `ul  1 a 4 49 ]
+"22
+[v ___fldiv@rem rem `ul  1 a 4 42 ]
+"20
+[v ___fldiv@new_exp new_exp `i  1 a 2 47 ]
+"19
+[v ___fldiv@aexp aexp `uc  1 a 1 54 ]
+"18
+[v ___fldiv@bexp bexp `uc  1 a 1 53 ]
+"16
+[v ___fldiv@sign sign `uc  1 a 1 46 ]
+"8
+[v ___fldiv@a a `d  1 p 4 29 ]
+[v ___fldiv@b b `d  1 p 4 33 ]
+"185
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+{
+[v ___flge@ff1 ff1 `d  1 p 4 23 ]
+[v ___flge@ff2 ff2 `d  1 p 4 27 ]
+"19
+} 0
+"50 C:\Users\nikun\MPLABXProjects\sense_mbus.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"60
+} 0
+"70
+[v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
+{
+"74
+} 0
+"65 C:\Users\nikun\MPLABXProjects\sense_mbus.X\mcc_generated_files/tmr1.c
+[v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
+{
+"92
+} 0
+"179
+[v _TMR1_SetInterruptHandler TMR1_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v TMR1_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 9 ]
+"181
+} 0
+"64 C:\Users\nikun\MPLABXProjects\sense_mbus.X\mcc_generated_files/tmr0.c
+[v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
+{
+"85
+} 0
+"133
+[v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v TMR0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 9 ]
+"135
+} 0
+"55 C:\Users\nikun\MPLABXProjects\sense_mbus.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"96
+} 0
+"62 C:\Users\nikun\MPLABXProjects\sense_mbus.X\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"68
+} 0
+"167 C:\Users\nikun\MPLABXProjects\sense_mbus.X\mcc_generated_files/i2c_master.c
+[v _I2C_Initialize I2C_Initialize `(v  1 e 1 0 ]
+{
+"174
+} 0
+"88 C:\Users\nikun\MPLABXProjects\sense_mbus.X\mcc_generated_files/eusart.c
+[v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
+{
+"130
+} 0
+"276
+[v _EUSART_SetTxInterruptHandler EUSART_SetTxInterruptHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetTxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 9 ]
+"278
+} 0
+"280
+[v _EUSART_SetRxInterruptHandler EUSART_SetRxInterruptHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetRxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 9 ]
+"282
+} 0
+"268
+[v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetOverrunErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 9 ]
+"270
+} 0
+"264
+[v _EUSART_SetFramingErrorHandler EUSART_SetFramingErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetFramingErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 9 ]
+"266
+} 0
+"272
+[v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 9 ]
+"274
+} 0
+"113 C:\Users\nikun\MPLABXProjects\sense_mbus.X\main.c
+[v _MCP3422_ReadVoltage MCP3422_ReadVoltage `(f  1 s 4 MCP3422_ReadVoltage ]
+{
+[v MCP3422_ReadVoltage@channel channel `uc  1 a 1 wreg ]
+"115
+[v MCP3422_ReadVoltage@adc_value adc_value `ul  1 a 4 41 ]
+"116
+[v MCP3422_ReadVoltage@data data `[3]uc  1 a 3 38 ]
+"113
+[v MCP3422_ReadVoltage@channel channel `uc  1 a 1 wreg ]
+"116
+[v MCP3422_ReadVoltage@channel channel `uc  1 a 1 37 ]
+"132
+} 0
+"10 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+{
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+"13
+[v ___xxtofl@arg arg `ul  1 a 4 19 ]
+"12
+[v ___xxtofl@exp exp `uc  1 a 1 18 ]
+"10
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+[v ___xxtofl@val val `l  1 p 4 9 ]
+"15
+[v ___xxtofl@sign sign `uc  1 a 1 17 ]
+"44
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+{
+[s S1851 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+"13
+[s S1856 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S1859 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1851 1 fAsBytes 4 0 `S1856 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S1859  1 a 4 23 ]
+"12
+[v ___flmul@grs grs `ul  1 a 4 19 ]
+[s S1928 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+"14
+[u S1931 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S1928 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S1931  1 a 2 27 ]
+"10
+[v ___flmul@bexp bexp `uc  1 a 1 18 ]
+"11
+[v ___flmul@aexp aexp `uc  1 a 1 17 ]
+"9
+[v ___flmul@sign sign `uc  1 a 1 16 ]
+"8
+[v ___flmul@b b `d  1 p 4 8 ]
+[v ___flmul@a a `d  1 p 4 12 ]
+"205
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+{
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
+"6
+[v __Umul8_16@word_mpld word_mpld `ui  1 a 2 15 ]
+"5
+[v __Umul8_16@product product `ui  1 a 2 13 ]
+"4
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
+[v __Umul8_16@multiplicand multiplicand `uc  1 p 1 9 ]
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 17 ]
+"60
+} 0
+"103 C:\Users\nikun\MPLABXProjects\sense_mbus.X\main.c
+[v _MCP3422_Write MCP3422_Write `(v  1 s 1 MCP3422_Write ]
+{
+[v MCP3422_Write@data data `uc  1 a 1 wreg ]
+[v MCP3422_Write@data data `uc  1 a 1 wreg ]
+"105
+[v MCP3422_Write@data data `uc  1 a 1 33 ]
+"106
+} 0
+"111 C:\Users\nikun\MPLABXProjects\sense_mbus.X\mcc_generated_files/examples/i2c_master_example.c
+[v _I2C_WriteNBytes I2C_WriteNBytes `(v  1 e 1 0 ]
+{
+[v I2C_WriteNBytes@address address `uc  1 a 1 wreg ]
+[v I2C_WriteNBytes@address address `uc  1 a 1 wreg ]
+[v I2C_WriteNBytes@data data `*.4uc  1 p 1 28 ]
+[v I2C_WriteNBytes@len len `ui  1 p 2 29 ]
+[v I2C_WriteNBytes@address address `uc  1 a 1 31 ]
+"118
+} 0
+"283 C:\Users\nikun\MPLABXProjects\sense_mbus.X\mcc_generated_files/i2c_master.c
+[v _I2C_SetAddressNackCallback I2C_SetAddressNackCallback `(v  1 e 1 0 ]
+{
+[v I2C_SetAddressNackCallback@cb cb `*.37(E360  1 p 2 14 ]
+[v I2C_SetAddressNackCallback@ptr ptr `*.1v  1 p 1 16 ]
+"286
+} 0
+"251
+[v _I2C_MasterWrite I2C_MasterWrite `(E355  1 e 1 0 ]
+{
+"254
+} 0
+"108 C:\Users\nikun\MPLABXProjects\sense_mbus.X\main.c
+[v _MCP3422_Read MCP3422_Read `(v  1 s 1 MCP3422_Read ]
+{
+[v MCP3422_Read@data data `*.4uc  1 a 1 wreg ]
+[v MCP3422_Read@data data `*.4uc  1 a 1 wreg ]
+[v MCP3422_Read@count count `uc  1 p 1 32 ]
+"110
+[v MCP3422_Read@data data `*.4uc  1 a 1 36 ]
+"111
+} 0
+"120 C:\Users\nikun\MPLABXProjects\sense_mbus.X\mcc_generated_files/examples/i2c_master_example.c
+[v _I2C_ReadNBytes I2C_ReadNBytes `(v  1 e 1 0 ]
+{
+[v I2C_ReadNBytes@address address `uc  1 a 1 wreg ]
+[v I2C_ReadNBytes@address address `uc  1 a 1 wreg ]
+[v I2C_ReadNBytes@data data `*.4uc  1 p 1 28 ]
+[v I2C_ReadNBytes@len len `ui  1 p 2 29 ]
+[v I2C_ReadNBytes@address address `uc  1 a 1 31 ]
+"126
+} 0
+"176 C:\Users\nikun\MPLABXProjects\sense_mbus.X\mcc_generated_files/i2c_master.c
+[v _I2C_Open I2C_Open `(E355  1 e 1 0 ]
+{
+[v I2C_Open@address address `uc  1 a 1 wreg ]
+"178
+[v I2C_Open@returnValue returnValue `E355  1 a 1 11 ]
+"176
+[v I2C_Open@address address `uc  1 a 1 wreg ]
+"178
+[v I2C_Open@address address `uc  1 a 1 10 ]
+"207
+} 0
+"543
+[v _I2C_MasterOpen I2C_MasterOpen `T(a  1 s 1 I2C_MasterOpen ]
+{
+"555
+} 0
+"246
+[v _I2C_MasterRead I2C_MasterRead `(E355  1 e 1 0 ]
+{
+"249
+} 0
+"224
+[v _I2C_MasterOperation I2C_MasterOperation `(E355  1 e 1 0 ]
+{
+[v I2C_MasterOperation@read read `a  1 a 1 wreg ]
+"226
+[v I2C_MasterOperation@returnValue returnValue `E355  1 a 1 27 ]
+"224
+[v I2C_MasterOperation@read read `a  1 a 1 wreg ]
+"226
+[v I2C_MasterOperation@read read `a  1 a 1 26 ]
+"244
+} 0
+"312
+[v _I2C_Poller I2C_Poller `(v  1 s 1 I2C_Poller ]
+{
+"319
+} 0
+"650
+[v _I2C_MasterWaitForEvent I2C_MasterWaitForEvent `T(v  1 s 1 I2C_MasterWaitForEvent ]
+{
+"659
+} 0
+"321
+[v _I2C_MasterFsm I2C_MasterFsm `T(v  1 s 1 I2C_MasterFsm ]
+{
+"330
+} 0
+"500
+[v _I2C_DO_ADDRESS_NACK I2C_DO_ADDRESS_NACK `(E3885  1 s 1 I2C_DO_ADDRESS_NACK ]
+{
+"512
+} 0
+"494
+[v _I2C_DO_RESET I2C_DO_RESET `(E3885  1 s 1 I2C_DO_RESET ]
+{
+"499
+} 0
+"488
+[v _I2C_DO_RX_NACK_RESTART I2C_DO_RX_NACK_RESTART `(E3885  1 s 1 I2C_DO_RX_NACK_RESTART ]
+{
+"492
+} 0
+"482
+[v _I2C_DO_RX_NACK_STOP I2C_DO_RX_NACK_STOP `(E3885  1 s 1 I2C_DO_RX_NACK_STOP ]
+{
+"486
+} 0
+"475
+[v _I2C_DO_RX_ACK I2C_DO_RX_ACK `(E3885  1 s 1 I2C_DO_RX_ACK ]
+{
+"479
+} 0
+"469
+[v _I2C_DO_SEND_STOP I2C_DO_SEND_STOP `(E3885  1 s 1 I2C_DO_SEND_STOP ]
+{
+"473
+} 0
+"463
+[v _I2C_DO_SEND_RESTART I2C_DO_SEND_RESTART `(E3885  1 s 1 I2C_DO_SEND_RESTART ]
+{
+"467
+} 0
+"456
+[v _I2C_DO_SEND_RESTART_WRITE I2C_DO_SEND_RESTART_WRITE `(E3885  1 s 1 I2C_DO_SEND_RESTART_WRITE ]
+{
+"460
+} 0
+"450
+[v _I2C_DO_SEND_RESTART_READ I2C_DO_SEND_RESTART_READ `(E3885  1 s 1 I2C_DO_SEND_RESTART_READ ]
+{
+"454
+} 0
+"402
+[v _I2C_DO_RCEN I2C_DO_RCEN `(E3885  1 s 1 I2C_DO_RCEN ]
+{
+"407
+} 0
+"378
+[v _I2C_DO_RX I2C_DO_RX `(E3885  1 s 1 I2C_DO_RX ]
+{
+"400
+} 0
+"354
+[v _I2C_DO_TX I2C_DO_TX `(E3885  1 s 1 I2C_DO_TX ]
+{
+"376
+} 0
+"347
+[v _I2C_DO_SEND_ADR_WRITE I2C_DO_SEND_ADR_WRITE `(E3885  1 s 1 I2C_DO_SEND_ADR_WRITE ]
+{
+"352
+} 0
+"340
+[v _I2C_DO_SEND_ADR_READ I2C_DO_SEND_ADR_READ `(E3885  1 s 1 I2C_DO_SEND_ADR_READ ]
+{
+"345
+} 0
+"333
+[v _I2C_DO_IDLE I2C_DO_IDLE `(E3885  1 s 1 I2C_DO_IDLE ]
+{
+"338
+} 0
+"409
+[v _I2C_DO_TX_EMPTY I2C_DO_TX_EMPTY `(E3885  1 s 1 I2C_DO_TX_EMPTY ]
+{
+"424
+} 0
+"645
+[v _I2C_MasterSetIrq I2C_MasterSetIrq `T(v  1 s 1 I2C_MasterSetIrq ]
+{
+"648
+} 0
+"598
+[v _I2C_MasterIsNack I2C_MasterIsNack `T(a  1 s 1 I2C_MasterIsNack ]
+{
+"601
+} 0
+"568
+[v _I2C_MasterSendTxData I2C_MasterSendTxData `T(v  1 s 1 I2C_MasterSendTxData ]
+{
+[v I2C_MasterSendTxData@data data `uc  1 a 1 wreg ]
+[v I2C_MasterSendTxData@data data `uc  1 a 1 wreg ]
+"570
+[v I2C_MasterSendTxData@data data `uc  1 a 1 9 ]
+"571
+} 0
+"603
+[v _I2C_MasterSendAck I2C_MasterSendAck `T(v  1 s 1 I2C_MasterSendAck ]
+{
+"607
+} 0
+"563
+[v _I2C_MasterGetRxData I2C_MasterGetRxData `T(uc  1 s 1 I2C_MasterGetRxData ]
+{
+"566
+} 0
+"609
+[v _I2C_MasterSendNack I2C_MasterSendNack `T(v  1 s 1 I2C_MasterSendNack ]
+{
+"613
+} 0
+"583
+[v _I2C_MasterStartRx I2C_MasterStartRx `T(v  1 s 1 I2C_MasterStartRx ]
+{
+"586
+} 0
+"525
+[v _I2C_CallbackReturnReset I2C_CallbackReturnReset `(E360  1 e 1 0 ]
+{
+[v I2C_CallbackReturnReset@funPtr funPtr `*.1v  1 p 1 18 ]
+"528
+} 0
+"520
+[v _I2C_CallbackReturnStop I2C_CallbackReturnStop `(E360  1 e 1 0 ]
+{
+"523
+} 0
+"170 C:\Users\nikun\MPLABXProjects\sense_mbus.X\mcc_generated_files/examples/i2c_master_example.c
+[v _rdBlkRegCompleteHandler rdBlkRegCompleteHandler `(E360  1 s 1 rdBlkRegCompleteHandler ]
+{
+[v rdBlkRegCompleteHandler@ptr ptr `*.1v  1 p 1 18 ]
+"175
+} 0
+"156
+[v _wr1RegCompleteHandler wr1RegCompleteHandler `(E360  1 s 1 wr1RegCompleteHandler ]
+{
+[v wr1RegCompleteHandler@ptr ptr `*.1v  1 p 1 18 ]
+"161
+} 0
+"149
+[v _rd2RegCompleteHandler rd2RegCompleteHandler `(E360  1 s 1 rd2RegCompleteHandler ]
+{
+[v rd2RegCompleteHandler@ptr ptr `*.1v  1 p 1 18 ]
+"154
+} 0
+"142
+[v _rd1RegCompleteHandler rd1RegCompleteHandler `(E360  1 s 1 rd1RegCompleteHandler ]
+{
+[v rd1RegCompleteHandler@ptr ptr `*.1v  1 p 1 18 ]
+"147
+} 0
+"163
+[v _wr2RegCompleteHandler wr2RegCompleteHandler `(E360  1 s 1 wr2RegCompleteHandler ]
+{
+[v wr2RegCompleteHandler@ptr ptr `*.1v  1 p 1 18 ]
+"168
+} 0
+"273 C:\Users\nikun\MPLABXProjects\sense_mbus.X\mcc_generated_files/i2c_master.c
+[v _I2C_SetDataCompleteCallback I2C_SetDataCompleteCallback `(v  1 e 1 0 ]
+{
+[v I2C_SetDataCompleteCallback@cb cb `*.37(E360  1 p 2 14 ]
+[v I2C_SetDataCompleteCallback@ptr ptr `*.1v  1 p 1 16 ]
+"276
+} 0
+"298
+[v _I2C_SetCallback I2C_SetCallback `(v  1 s 1 I2C_SetCallback ]
+{
+[v I2C_SetCallback@idx idx `E3903  1 a 1 wreg ]
+[v I2C_SetCallback@idx idx `E3903  1 a 1 wreg ]
+[v I2C_SetCallback@cb cb `*.37(E360  1 p 2 9 ]
+[v I2C_SetCallback@ptr ptr `*.1v  1 p 1 11 ]
+"300
+[v I2C_SetCallback@idx idx `E3903  1 a 1 13 ]
+"310
+} 0
+"263
+[v _I2C_SetBuffer I2C_SetBuffer `(v  1 e 1 0 ]
+{
+[v I2C_SetBuffer@buffer buffer `*.4v  1 a 1 wreg ]
+[v I2C_SetBuffer@buffer buffer `*.4v  1 a 1 wreg ]
+[v I2C_SetBuffer@bufferSize bufferSize `ui  1 p 2 9 ]
+"265
+[v I2C_SetBuffer@buffer buffer `*.4v  1 a 1 12 ]
+"271
+} 0
+"593
+[v _I2C_MasterStop I2C_MasterStop `T(v  1 s 1 I2C_MasterStop ]
+{
+"596
+} 0
+"573
+[v _I2C_MasterEnableRestart I2C_MasterEnableRestart `T(v  1 s 1 I2C_MasterEnableRestart ]
+{
+"576
+} 0
+"588
+[v _I2C_MasterStart I2C_MasterStart `T(v  1 s 1 I2C_MasterStart ]
+{
+"591
+} 0
+"209
+[v _I2C_Close I2C_Close `(E355  1 e 1 0 ]
+{
+"211
+[v I2C_Close@returnValue returnValue `E355  1 a 1 10 ]
+"222
+} 0
+"635
+[v _I2C_MasterDisableIrq I2C_MasterDisableIrq `T(v  1 s 1 I2C_MasterDisableIrq ]
+{
+"638
+} 0
+"557
+[v _I2C_MasterClose I2C_MasterClose `T(v  1 s 1 I2C_MasterClose ]
+{
+"561
+} 0
+"640
+[v _I2C_MasterClearIrq I2C_MasterClearIrq `T(v  1 s 1 I2C_MasterClearIrq ]
+{
+"643
+} 0
+"17 C:\Users\nikun\MPLABXProjects\sense_mbus.X\modbus_slave.c
+[v _InitModbusSlave InitModbusSlave `(v  1 e 1 0 ]
+{
+[v InitModbusSlave@u8SlaveId u8SlaveId `uc  1 a 1 wreg ]
+[v InitModbusSlave@u8SlaveId u8SlaveId `uc  1 a 1 wreg ]
+"19
+[v InitModbusSlave@u8SlaveId u8SlaveId `uc  1 a 1 10 ]
+"26
+} 0
+"94 C:\Users\nikun\MPLABXProjects\sense_mbus.X\mcc_generated_files/memory.c
+[v _FLASH_WriteBlock FLASH_WriteBlock `(c  1 e 1 0 ]
+{
+"96
+[v FLASH_WriteBlock@blockStartAddr blockStartAddr `us  1 a 2 18 ]
+"98
+[v FLASH_WriteBlock@i i `uc  1 a 1 21 ]
+"97
+[v FLASH_WriteBlock@GIEBitValue GIEBitValue `uc  1 a 1 20 ]
+"94
+[v FLASH_WriteBlock@writeAddr writeAddr `us  1 p 2 12 ]
+[v FLASH_WriteBlock@flashWordArray flashWordArray `*.5us  1 p 1 14 ]
+"146
+} 0
+"148
+[v _FLASH_EraseBlock FLASH_EraseBlock `(v  1 e 1 0 ]
+{
+"150
+[v FLASH_EraseBlock@GIEBitValue GIEBitValue `uc  1 a 1 11 ]
+"148
+[v FLASH_EraseBlock@startAddr startAddr `us  1 p 2 9 ]
+"173
+} 0
+"58
+[v _FLASH_ReadWord FLASH_ReadWord `(us  1 e 2 0 ]
+{
+"60
+[v FLASH_ReadWord@GIEBitValue GIEBitValue `uc  1 a 1 11 ]
+"58
+[v FLASH_ReadWord@flashAddr flashAddr `us  1 p 2 9 ]
+"73
+} 0
+"52 C:\Users\nikun\MPLABXProjects\sense_mbus.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
+{
+"82
+} 0
+"64 C:\Users\nikun\MPLABXProjects\sense_mbus.X\modbus_slave.c
+[v _mbus_tx_handler mbus_tx_handler `(v  1 e 1 0 ]
+{
+"80
+} 0
+"45
+[v _mbus_rx_handler mbus_rx_handler `(v  1 e 1 0 ]
+{
+"62
+} 0
+"88
+[v _ModbusSlaveProcessReceivedQuery ModbusSlaveProcessReceivedQuery `(v  1 e 1 0 ]
+{
+"135
+[v ModbusSlaveProcessReceivedQuery@u16Data u16Data `us  1 a 2 3 ]
+"122
+[v ModbusSlaveProcessReceivedQuery@u8ReadReg u8ReadReg `uc  1 a 1 0 ]
+"90
+[v ModbusSlaveProcessReceivedQuery@i i `ui  1 a 2 7 ]
+[v ModbusSlaveProcessReceivedQuery@j j `ui  1 a 2 5 ]
+[v ModbusSlaveProcessReceivedQuery@k k `ui  1 a 2 1 ]
+"168
+} 0
+"28
+[v _calculate_crc calculate_crc `(v  1 e 1 0 ]
+{
+[v calculate_crc@crcreg crcreg `uc  1 a 1 wreg ]
+"33
+[v calculate_crc@i i `uc  1 a 1 5 ]
+"30
+[v calculate_crc@crcbit crcbit `us  1 a 2 3 ]
+"28
+[v calculate_crc@crcreg crcreg `uc  1 a 1 wreg ]
+"32
+[v calculate_crc@crcreg crcreg `uc  1 a 1 2 ]
+"43
+} 0
+"158 C:\Users\nikun\MPLABXProjects\sense_mbus.X\mcc_generated_files/tmr1.c
+[v _TMR1_ISR TMR1_ISR `(v  1 e 1 0 ]
+{
+"168
+} 0
+"121
+[v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
+{
+[v TMR1_WriteTimer@timerVal timerVal `us  1 p 2 0 ]
+"141
+} 0
+"170
+[v _TMR1_CallBack TMR1_CallBack `(v  1 e 1 0 ]
+{
+"177
+} 0
+"82 C:\Users\nikun\MPLABXProjects\sense_mbus.X\modbus_slave.c
+[v _mbus_timer_handler mbus_timer_handler `(v  1 e 1 0 ]
+{
+"86
+} 0
+"108 C:\Users\nikun\MPLABXProjects\sense_mbus.X\mcc_generated_files/tmr0.c
+[v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
+{
+"121
+} 0
+"123
+[v _TMR0_CallBack TMR0_CallBack `(v  1 e 1 0 ]
+{
+"131
+} 0
+"137
+[v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"140
+} 0
