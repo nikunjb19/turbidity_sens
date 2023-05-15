@@ -885,270 +885,280 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . _modbusSlaveData 3 -> -> 0 `i `uc ]
 [e = . _modbusSlaveData 5 -> -> 8 `i `uc ]
 "86
-[; ;modbus_slave.c: 86: }
+[; ;modbus_slave.c: 86:     do { LATCbits.LATC7 = 0; } while(0);;
+[e :U 480 ]
+{
+[e = . . _LATCbits 0 7 -> -> 0 `i `uc ]
+}
+[e :U 479 ]
+"87
+[; ;modbus_slave.c: 87: }
 [e :UE 477 ]
 }
-"88
-[; ;modbus_slave.c: 88: void ModbusSlaveProcessReceivedQuery(void)
-[v _ModbusSlaveProcessReceivedQuery `(v ~T0 @X0 1 ef ]
 "89
-[; ;modbus_slave.c: 89: {
+[; ;modbus_slave.c: 89: void ModbusSlaveProcessReceivedQuery(void)
+[v _ModbusSlaveProcessReceivedQuery `(v ~T0 @X0 1 ef ]
+"90
+[; ;modbus_slave.c: 90: {
 {
 [e :U _ModbusSlaveProcessReceivedQuery ]
 [f ]
-"90
-[; ;modbus_slave.c: 90:    unsigned int i, j, k;
+"91
+[; ;modbus_slave.c: 91:    unsigned int i, j, k;
 [v _i `ui ~T0 @X0 1 a ]
 [v _j `ui ~T0 @X0 1 a ]
 [v _k `ui ~T0 @X0 1 a ]
-"92
-[; ;modbus_slave.c: 92:     crcModbusSlave = 0xFFFF;
-[e = _crcModbusSlave -> -> 65535 `ui `us ]
 "93
-[; ;modbus_slave.c: 93:     for(i=0; i<modbusSlaveData.TotalRxValue-2; i++)
-{
-[e = _i -> -> 0 `i `ui ]
-[e $U 482  ]
-[e :U 479 ]
+[; ;modbus_slave.c: 93:     if(modbusSlaveData.ModbusFrame[0] != modbusSlaveData.address)
+[e $ ! != -> *U + &U . _modbusSlaveData 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux `i -> . _modbusSlaveData 7 `i 482  ]
 "94
 [; ;modbus_slave.c: 94:     {
 {
 "95
-[; ;modbus_slave.c: 95:         calculate_crc(modbusSlaveData.ModbusFrame[i]);
-[e ( _calculate_crc (1 *U + &U . _modbusSlaveData 1 * -> _i `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux ]
+[; ;modbus_slave.c: 95:         mbus_timer_handler();
+[e ( _mbus_timer_handler ..  ]
 "96
-[; ;modbus_slave.c: 96:     }
+[; ;modbus_slave.c: 96:         return;
+[e $UE 481  ]
+"97
+[; ;modbus_slave.c: 97:     }
 }
-[e ++ _i -> -> 1 `i `ui ]
 [e :U 482 ]
-[e $ < _i -> - -> . _modbusSlaveData 5 `i -> 2 `i `ui 479  ]
-[e :U 480 ]
-}
-"98
-[; ;modbus_slave.c: 98:     if(modbusSlaveData.ModbusFrame[i++] != (crcModbusSlave & 0xFF))
-[e $ ! != -> *U + &U . _modbusSlaveData 1 * -> ++ _i -> -> 1 `i `ui `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux `ui & -> _crcModbusSlave `ui -> -> 255 `i `ui 483  ]
 "99
-[; ;modbus_slave.c: 99:     {
-{
-"100
-[; ;modbus_slave.c: 100:         modbusSlaveData.flags.bitValue.error = 1;
-[e = . . . _modbusSlaveData 6 1 3 -> -> 1 `i `uc ]
-"101
-[; ;modbus_slave.c: 101:         return;
-[e $UE 478  ]
-"102
-[; ;modbus_slave.c: 102:     }
-}
-[e :U 483 ]
-"104
-[; ;modbus_slave.c: 104:     if(modbusSlaveData.ModbusFrame[i] != (crcModbusSlave>>8))
-[e $ ! != -> *U + &U . _modbusSlaveData 1 * -> _i `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux `ui >> -> _crcModbusSlave `ui -> 8 `i 484  ]
-"105
-[; ;modbus_slave.c: 105:     {
-{
-"106
-[; ;modbus_slave.c: 106:         modbusSlaveData.flags.bitValue.error = 1;
-[e = . . . _modbusSlaveData 6 1 3 -> -> 1 `i `uc ]
-"107
-[; ;modbus_slave.c: 107:         return;
-[e $UE 478  ]
-"108
-[; ;modbus_slave.c: 108:     }
-}
-[e :U 484 ]
-"110
-[; ;modbus_slave.c: 110:     if(modbusSlaveData.ModbusFrame[0] != modbusSlaveData.address)
-[e $ ! != -> *U + &U . _modbusSlaveData 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux `i -> . _modbusSlaveData 7 `i 485  ]
-"111
-[; ;modbus_slave.c: 111:     {
-{
-"112
-[; ;modbus_slave.c: 112:         return;
-[e $UE 478  ]
-"113
-[; ;modbus_slave.c: 113:     }
-}
-[e :U 485 ]
-"114
-[; ;modbus_slave.c: 114:     modbusSlaveData.TotalTxValue = 0;
-[e = . _modbusSlaveData 4 -> -> 0 `i `uc ]
-"115
-[; ;modbus_slave.c: 115:     switch(modbusSlaveData.ModbusFrame[1])
-[e $U 487  ]
-"116
-[; ;modbus_slave.c: 116:     {
-{
-"117
-[; ;modbus_slave.c: 117:         case 3U:
-[e :U 488 ]
-"118
-[; ;modbus_slave.c: 118:             modbusSlaveData.TotalTxValue = 2;
-[e = . _modbusSlaveData 4 -> -> 2 `i `uc ]
-"119
-[; ;modbus_slave.c: 119:             j = (modbusSlaveData.ModbusFrame[2] << 8U) | modbusSlaveData.ModbusFrame[3];
-[e = _j -> | << -> *U + &U . _modbusSlaveData 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux `i -> 8 `ui -> *U + &U . _modbusSlaveData 1 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux `i `ui ]
-"121
-[; ;modbus_slave.c: 121:             modbusSlaveData.ModbusFrame[modbusSlaveData.TotalTxValue++] = modbusSlaveData.ModbusFrame[5]<<1;
-[e = *U + &U . _modbusSlaveData 1 * -> ++ . _modbusSlaveData 4 -> -> 1 `i `Vuc `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux -> << -> *U + &U . _modbusSlaveData 1 * -> -> -> 5 `i `ui `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux `i -> 1 `i `uc ]
-"122
-[; ;modbus_slave.c: 122:             uint8_t u8ReadReg = modbusSlaveData.ModbusFrame[5];
-[v _u8ReadReg `uc ~T0 @X0 1 a ]
-[e = _u8ReadReg *U + &U . _modbusSlaveData 1 * -> -> -> 5 `i `ui `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux ]
-"123
-[; ;modbus_slave.c: 123:             for(i=j; i<(u8ReadReg+j); i++)
-{
-[e = _i _j ]
-[e $U 492  ]
-[e :U 489 ]
-"124
-[; ;modbus_slave.c: 124:             {
-{
-"125
-[; ;modbus_slave.c: 125:                 modbusSlaveData.ModbusFrame[modbusSlaveData.TotalTxValue++] = (modbusSlaveData.ModbusHoldingRegister[i] >> 8U) & 0xFF;
-[e = *U + &U . _modbusSlaveData 1 * -> ++ . _modbusSlaveData 4 -> -> 1 `i `Vuc `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux -> & >> -> *U + &U . _modbusSlaveData 0 * -> _i `ux -> -> # *U &U . _modbusSlaveData 0 `ui `ux `ui -> 8 `ui -> -> 255 `i `ui `uc ]
-"126
-[; ;modbus_slave.c: 126:                 modbusSlaveData.ModbusFrame[modbusSlaveData.TotalTxValue++] = modbusSlaveData.ModbusHoldingRegister[i] & 0xFF;
-[e = *U + &U . _modbusSlaveData 1 * -> ++ . _modbusSlaveData 4 -> -> 1 `i `Vuc `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux -> & -> *U + &U . _modbusSlaveData 0 * -> _i `ux -> -> # *U &U . _modbusSlaveData 0 `ui `ux `ui -> -> 255 `i `ui `uc ]
-"127
-[; ;modbus_slave.c: 127:             }
-}
-[e ++ _i -> -> 1 `i `ui ]
-[e :U 492 ]
-[e $ < _i + -> _u8ReadReg `ui _j 489  ]
-[e :U 490 ]
-}
-"128
-[; ;modbus_slave.c: 128:             break;
-[e $U 486  ]
-"130
-[; ;modbus_slave.c: 130:         case 6U:
-[e :U 493 ]
-"131
-[; ;modbus_slave.c: 131:             i = modbusSlaveData.ModbusFrame[2];
-[e = _i -> *U + &U . _modbusSlaveData 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux `ui ]
-"132
-[; ;modbus_slave.c: 132:             i <<= 8U;
-[e =<< _i -> 8 `ui ]
-"133
-[; ;modbus_slave.c: 133:             i |= modbusSlaveData.ModbusFrame[3];
-[e =| _i -> *U + &U . _modbusSlaveData 1 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux `ui ]
-"135
-[; ;modbus_slave.c: 135:             uint16_t u16Data = modbusSlaveData.ModbusFrame[4];
-[v _u16Data `us ~T0 @X0 1 a ]
-[e = _u16Data -> *U + &U . _modbusSlaveData 1 * -> -> -> 4 `i `ui `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux `us ]
-"136
-[; ;modbus_slave.c: 136:             u16Data <<= 8U;
-[e =<< _u16Data -> -> 8 `ui `us ]
-"137
-[; ;modbus_slave.c: 137:             u16Data |= modbusSlaveData.ModbusFrame[5];
-[e =| _u16Data -> *U + &U . _modbusSlaveData 1 * -> -> -> 5 `i `ui `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux `us ]
-"138
-[; ;modbus_slave.c: 138:             modbusSlaveData.ModbusHoldingRegister[i] = u16Data;
-[e = *U + &U . _modbusSlaveData 0 * -> _i `ux -> -> # *U &U . _modbusSlaveData 0 `ui `ux _u16Data ]
-"139
-[; ;modbus_slave.c: 139:             modbusSlaveData.TotalTxValue = 6;
-[e = . _modbusSlaveData 4 -> -> 6 `i `uc ]
-"140
-[; ;modbus_slave.c: 140:             break;
-[e $U 486  ]
-"142
-[; ;modbus_slave.c: 142:         case 16U:
-[e :U 494 ]
-"143
-[; ;modbus_slave.c: 143:             j = modbusSlaveData.ModbusFrame[3]<<1;
-[e = _j -> << -> *U + &U . _modbusSlaveData 1 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux `i -> 1 `i `ui ]
-"144
-[; ;modbus_slave.c: 144:             k = 7;
-[e = _k -> -> 7 `i `ui ]
-"145
-[; ;modbus_slave.c: 145:             for(i=j; i<(modbusSlaveData.ModbusFrame[6]+j); i++)
-{
-[e = _i _j ]
-[e $U 498  ]
-[e :U 495 ]
-"146
-[; ;modbus_slave.c: 146:             {
-{
-"147
-[; ;modbus_slave.c: 147:                 modbusSlaveData.ModbusHoldingRegister[i] = modbusSlaveData.ModbusFrame[k++];
-[e = *U + &U . _modbusSlaveData 0 * -> _i `ux -> -> # *U &U . _modbusSlaveData 0 `ui `ux -> *U + &U . _modbusSlaveData 1 * -> ++ _k -> -> 1 `i `ui `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux `us ]
-"148
-[; ;modbus_slave.c: 148:             }
-}
-[e ++ _i -> -> 1 `i `ui ]
-[e :U 498 ]
-[e $ < _i + -> *U + &U . _modbusSlaveData 1 * -> -> -> 6 `i `ui `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux `ui _j 495  ]
-[e :U 496 ]
-}
-"149
-[; ;modbus_slave.c: 149:             modbusSlaveData.TotalTxValue = 6;
-[e = . _modbusSlaveData 4 -> -> 6 `i `uc ]
-"150
-[; ;modbus_slave.c: 150:             break;
-[e $U 486  ]
-"151
-[; ;modbus_slave.c: 151:         default:
-[e :U 499 ]
-"153
-[; ;modbus_slave.c: 153:             break;
-[e $U 486  ]
-"154
-[; ;modbus_slave.c: 154:     }
-}
-[e $U 486  ]
-[e :U 487 ]
-[e [\ -> *U + &U . _modbusSlaveData 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux `i , $ -> -> 3 `ui `i 488
- , $ -> -> 6 `ui `i 493
- , $ -> -> 16 `ui `i 494
- 499 ]
-[e :U 486 ]
-"156
-[; ;modbus_slave.c: 156:     crcModbusSlave = 0xFFFF;
+[; ;modbus_slave.c: 99:     crcModbusSlave = 0xFFFF;
 [e = _crcModbusSlave -> -> 65535 `ui `us ]
-"157
-[; ;modbus_slave.c: 157:     for(i=0; i<modbusSlaveData.TotalTxValue; i++)
+"100
+[; ;modbus_slave.c: 100:     for(i=0; i<modbusSlaveData.TotalRxValue-2; i++)
 {
 [e = _i -> -> 0 `i `ui ]
-[e $U 503  ]
-[e :U 500 ]
-"158
-[; ;modbus_slave.c: 158:     {
+[e $U 486  ]
+[e :U 483 ]
+"101
+[; ;modbus_slave.c: 101:     {
 {
-"159
-[; ;modbus_slave.c: 159:         calculate_crc(modbusSlaveData.ModbusFrame[i]);
+"102
+[; ;modbus_slave.c: 102:         calculate_crc(modbusSlaveData.ModbusFrame[i]);
 [e ( _calculate_crc (1 *U + &U . _modbusSlaveData 1 * -> _i `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux ]
-"160
-[; ;modbus_slave.c: 160:     }
+"103
+[; ;modbus_slave.c: 103:     }
 }
 [e ++ _i -> -> 1 `i `ui ]
-[e :U 503 ]
-[e $ < _i -> . _modbusSlaveData 4 `ui 500  ]
-[e :U 501 ]
+[e :U 486 ]
+[e $ < _i -> - -> . _modbusSlaveData 5 `i -> 2 `i `ui 483  ]
+[e :U 484 ]
 }
+"105
+[; ;modbus_slave.c: 105:     if(modbusSlaveData.ModbusFrame[i++] != (crcModbusSlave & 0xFF))
+[e $ ! != -> *U + &U . _modbusSlaveData 1 * -> ++ _i -> -> 1 `i `ui `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux `ui & -> _crcModbusSlave `ui -> -> 255 `i `ui 487  ]
+"106
+[; ;modbus_slave.c: 106:     {
+{
+"107
+[; ;modbus_slave.c: 107:         modbusSlaveData.flags.bitValue.error = 1;
+[e = . . . _modbusSlaveData 6 1 3 -> -> 1 `i `uc ]
+"108
+[; ;modbus_slave.c: 108:         return;
+[e $UE 481  ]
+"109
+[; ;modbus_slave.c: 109:     }
+}
+[e :U 487 ]
+"111
+[; ;modbus_slave.c: 111:     if(modbusSlaveData.ModbusFrame[i] != (crcModbusSlave>>8))
+[e $ ! != -> *U + &U . _modbusSlaveData 1 * -> _i `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux `ui >> -> _crcModbusSlave `ui -> 8 `i 488  ]
+"112
+[; ;modbus_slave.c: 112:     {
+{
+"113
+[; ;modbus_slave.c: 113:         modbusSlaveData.flags.bitValue.error = 1;
+[e = . . . _modbusSlaveData 6 1 3 -> -> 1 `i `uc ]
+"114
+[; ;modbus_slave.c: 114:         return;
+[e $UE 481  ]
+"115
+[; ;modbus_slave.c: 115:     }
+}
+[e :U 488 ]
+"116
+[; ;modbus_slave.c: 116:     modbusSlaveData.TotalTxValue = 0;
+[e = . _modbusSlaveData 4 -> -> 0 `i `uc ]
+"117
+[; ;modbus_slave.c: 117:     switch(modbusSlaveData.ModbusFrame[1])
+[e $U 490  ]
+"118
+[; ;modbus_slave.c: 118:     {
+{
+"119
+[; ;modbus_slave.c: 119:         case 3U:
+[e :U 491 ]
+"120
+[; ;modbus_slave.c: 120:             modbusSlaveData.TotalTxValue = 2;
+[e = . _modbusSlaveData 4 -> -> 2 `i `uc ]
+"121
+[; ;modbus_slave.c: 121:             j = (modbusSlaveData.ModbusFrame[2] << 8U) | modbusSlaveData.ModbusFrame[3];
+[e = _j -> | << -> *U + &U . _modbusSlaveData 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux `i -> 8 `ui -> *U + &U . _modbusSlaveData 1 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux `i `ui ]
+"123
+[; ;modbus_slave.c: 123:             modbusSlaveData.ModbusFrame[modbusSlaveData.TotalTxValue++] = modbusSlaveData.ModbusFrame[5]<<1;
+[e = *U + &U . _modbusSlaveData 1 * -> ++ . _modbusSlaveData 4 -> -> 1 `i `Vuc `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux -> << -> *U + &U . _modbusSlaveData 1 * -> -> -> 5 `i `ui `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux `i -> 1 `i `uc ]
+"124
+[; ;modbus_slave.c: 124:             uint8_t u8ReadReg = modbusSlaveData.ModbusFrame[5];
+[v _u8ReadReg `uc ~T0 @X0 1 a ]
+[e = _u8ReadReg *U + &U . _modbusSlaveData 1 * -> -> -> 5 `i `ui `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux ]
+"125
+[; ;modbus_slave.c: 125:             for(i=j; i<(u8ReadReg+j); i++)
+{
+[e = _i _j ]
+[e $U 495  ]
+[e :U 492 ]
+"126
+[; ;modbus_slave.c: 126:             {
+{
+"127
+[; ;modbus_slave.c: 127:                 modbusSlaveData.ModbusFrame[modbusSlaveData.TotalTxValue++] = (modbusSlaveData.ModbusHoldingRegister[i] >> 8U) & 0xFF;
+[e = *U + &U . _modbusSlaveData 1 * -> ++ . _modbusSlaveData 4 -> -> 1 `i `Vuc `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux -> & >> -> *U + &U . _modbusSlaveData 0 * -> _i `ux -> -> # *U &U . _modbusSlaveData 0 `ui `ux `ui -> 8 `ui -> -> 255 `i `ui `uc ]
+"128
+[; ;modbus_slave.c: 128:                 modbusSlaveData.ModbusFrame[modbusSlaveData.TotalTxValue++] = modbusSlaveData.ModbusHoldingRegister[i] & 0xFF;
+[e = *U + &U . _modbusSlaveData 1 * -> ++ . _modbusSlaveData 4 -> -> 1 `i `Vuc `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux -> & -> *U + &U . _modbusSlaveData 0 * -> _i `ux -> -> # *U &U . _modbusSlaveData 0 `ui `ux `ui -> -> 255 `i `ui `uc ]
+"129
+[; ;modbus_slave.c: 129:             }
+}
+[e ++ _i -> -> 1 `i `ui ]
+[e :U 495 ]
+[e $ < _i + -> _u8ReadReg `ui _j 492  ]
+[e :U 493 ]
+}
+"130
+[; ;modbus_slave.c: 130:             break;
+[e $U 489  ]
+"132
+[; ;modbus_slave.c: 132:         case 6U:
+[e :U 496 ]
+"133
+[; ;modbus_slave.c: 133:             i = modbusSlaveData.ModbusFrame[2];
+[e = _i -> *U + &U . _modbusSlaveData 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux `ui ]
+"134
+[; ;modbus_slave.c: 134:             i <<= 8U;
+[e =<< _i -> 8 `ui ]
+"135
+[; ;modbus_slave.c: 135:             i |= modbusSlaveData.ModbusFrame[3];
+[e =| _i -> *U + &U . _modbusSlaveData 1 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux `ui ]
+"137
+[; ;modbus_slave.c: 137:             uint16_t u16Data = modbusSlaveData.ModbusFrame[4];
+[v _u16Data `us ~T0 @X0 1 a ]
+[e = _u16Data -> *U + &U . _modbusSlaveData 1 * -> -> -> 4 `i `ui `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux `us ]
+"138
+[; ;modbus_slave.c: 138:             u16Data <<= 8U;
+[e =<< _u16Data -> -> 8 `ui `us ]
+"139
+[; ;modbus_slave.c: 139:             u16Data |= modbusSlaveData.ModbusFrame[5];
+[e =| _u16Data -> *U + &U . _modbusSlaveData 1 * -> -> -> 5 `i `ui `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux `us ]
+"140
+[; ;modbus_slave.c: 140:             modbusSlaveData.ModbusHoldingRegister[i] = u16Data;
+[e = *U + &U . _modbusSlaveData 0 * -> _i `ux -> -> # *U &U . _modbusSlaveData 0 `ui `ux _u16Data ]
+"141
+[; ;modbus_slave.c: 141:             modbusSlaveData.TotalTxValue = 6;
+[e = . _modbusSlaveData 4 -> -> 6 `i `uc ]
+"142
+[; ;modbus_slave.c: 142:             break;
+[e $U 489  ]
+"144
+[; ;modbus_slave.c: 144:         case 16U:
+[e :U 497 ]
+"145
+[; ;modbus_slave.c: 145:             j = modbusSlaveData.ModbusFrame[3]<<1;
+[e = _j -> << -> *U + &U . _modbusSlaveData 1 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux `i -> 1 `i `ui ]
+"146
+[; ;modbus_slave.c: 146:             k = 7;
+[e = _k -> -> 7 `i `ui ]
+"147
+[; ;modbus_slave.c: 147:             for(i=j; i<(modbusSlaveData.ModbusFrame[6]+j); i++)
+{
+[e = _i _j ]
+[e $U 501  ]
+[e :U 498 ]
+"148
+[; ;modbus_slave.c: 148:             {
+{
+"149
+[; ;modbus_slave.c: 149:                 modbusSlaveData.ModbusHoldingRegister[i] = modbusSlaveData.ModbusFrame[k++];
+[e = *U + &U . _modbusSlaveData 0 * -> _i `ux -> -> # *U &U . _modbusSlaveData 0 `ui `ux -> *U + &U . _modbusSlaveData 1 * -> ++ _k -> -> 1 `i `ui `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux `us ]
+"150
+[; ;modbus_slave.c: 150:             }
+}
+[e ++ _i -> -> 1 `i `ui ]
+[e :U 501 ]
+[e $ < _i + -> *U + &U . _modbusSlaveData 1 * -> -> -> 6 `i `ui `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux `ui _j 498  ]
+[e :U 499 ]
+}
+"151
+[; ;modbus_slave.c: 151:             modbusSlaveData.TotalTxValue = 6;
+[e = . _modbusSlaveData 4 -> -> 6 `i `uc ]
+"152
+[; ;modbus_slave.c: 152:             break;
+[e $U 489  ]
+"153
+[; ;modbus_slave.c: 153:         default:
+[e :U 502 ]
+"155
+[; ;modbus_slave.c: 155:             break;
+[e $U 489  ]
+"156
+[; ;modbus_slave.c: 156:     }
+}
+[e $U 489  ]
+[e :U 490 ]
+[e [\ -> *U + &U . _modbusSlaveData 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux `i , $ -> -> 3 `ui `i 491
+ , $ -> -> 6 `ui `i 496
+ , $ -> -> 16 `ui `i 497
+ 502 ]
+[e :U 489 ]
+"158
+[; ;modbus_slave.c: 158:     crcModbusSlave = 0xFFFF;
+[e = _crcModbusSlave -> -> 65535 `ui `us ]
+"159
+[; ;modbus_slave.c: 159:     for(i=0; i<modbusSlaveData.TotalTxValue; i++)
+{
+[e = _i -> -> 0 `i `ui ]
+[e $U 506  ]
+[e :U 503 ]
+"160
+[; ;modbus_slave.c: 160:     {
+{
 "161
-[; ;modbus_slave.c: 161:     modbusSlaveData.ModbusFrame[modbusSlaveData.TotalTxValue++] = crcModbusSlave & 0xFF;
-[e = *U + &U . _modbusSlaveData 1 * -> ++ . _modbusSlaveData 4 -> -> 1 `i `Vuc `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux -> & -> _crcModbusSlave `ui -> -> 255 `i `ui `uc ]
+[; ;modbus_slave.c: 161:         calculate_crc(modbusSlaveData.ModbusFrame[i]);
+[e ( _calculate_crc (1 *U + &U . _modbusSlaveData 1 * -> _i `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux ]
 "162
-[; ;modbus_slave.c: 162:     modbusSlaveData.ModbusFrame[modbusSlaveData.TotalTxValue++] = crcModbusSlave >> 8;
-[e = *U + &U . _modbusSlaveData 1 * -> ++ . _modbusSlaveData 4 -> -> 1 `i `Vuc `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux -> >> -> _crcModbusSlave `ui -> 8 `i `uc ]
-"164
-[; ;modbus_slave.c: 164:     T1CONbits.TMR1ON = 0;
-[e = . . _T1CONbits 0 0 -> -> 0 `i `uc ]
-"165
-[; ;modbus_slave.c: 165:     modbusSlaveData.TxPointer = 0;
-[e = . _modbusSlaveData 2 -> -> 0 `i `uc ]
-"166
-[; ;modbus_slave.c: 166:     do { LATCbits.LATC7 = 1; } while(0);;
+[; ;modbus_slave.c: 162:     }
+}
+[e ++ _i -> -> 1 `i `ui ]
 [e :U 506 ]
+[e $ < _i -> . _modbusSlaveData 4 `ui 503  ]
+[e :U 504 ]
+}
+"163
+[; ;modbus_slave.c: 163:     modbusSlaveData.ModbusFrame[modbusSlaveData.TotalTxValue++] = crcModbusSlave & 0xFF;
+[e = *U + &U . _modbusSlaveData 1 * -> ++ . _modbusSlaveData 4 -> -> 1 `i `Vuc `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux -> & -> _crcModbusSlave `ui -> -> 255 `i `ui `uc ]
+"164
+[; ;modbus_slave.c: 164:     modbusSlaveData.ModbusFrame[modbusSlaveData.TotalTxValue++] = crcModbusSlave >> 8;
+[e = *U + &U . _modbusSlaveData 1 * -> ++ . _modbusSlaveData 4 -> -> 1 `i `Vuc `ux -> -> # *U &U . _modbusSlaveData 1 `ui `ux -> >> -> _crcModbusSlave `ui -> 8 `i `uc ]
+"166
+[; ;modbus_slave.c: 166:     T1CONbits.TMR1ON = 0;
+[e = . . _T1CONbits 0 0 -> -> 0 `i `uc ]
+"167
+[; ;modbus_slave.c: 167:     modbusSlaveData.TxPointer = 0;
+[e = . _modbusSlaveData 2 -> -> 0 `i `uc ]
+"168
+[; ;modbus_slave.c: 168:     do { LATCbits.LATC7 = 1; } while(0);;
+[e :U 509 ]
 {
 [e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
 }
-[e :U 505 ]
-"167
-[; ;modbus_slave.c: 167:     PIE1bits.TXIE = 1; TXSTAbits.TXEN = 1;
+[e :U 508 ]
+"169
+[; ;modbus_slave.c: 169:     PIE1bits.TXIE = 1; TXSTAbits.TXEN = 1;
 [e = . . _PIE1bits 0 4 -> -> 1 `i `uc ]
 [e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
-"168
-[; ;modbus_slave.c: 168: }
-[e :UE 478 ]
+"170
+[; ;modbus_slave.c: 170: }
+[e :UE 481 ]
 }

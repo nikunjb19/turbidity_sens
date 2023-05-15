@@ -6328,11 +6328,18 @@ void mbus_timer_handler(void)
 {
     TMR1L = 0x00; TMR1H = 0xE0; PIR1bits.TMR1IF = 0;;
     modbusSlaveData.RxPointer = 0; modbusSlaveData.TotalRxValue = 8;;
+    do { LATCbits.LATC7 = 0; } while(0);;
 }
 
 void ModbusSlaveProcessReceivedQuery(void)
 {
    unsigned int i, j, k;
+
+    if(modbusSlaveData.ModbusFrame[0] != modbusSlaveData.address)
+    {
+        mbus_timer_handler();
+        return;
+    }
 
     crcModbusSlave = 0xFFFF;
     for(i=0; i<modbusSlaveData.TotalRxValue-2; i++)
@@ -6349,11 +6356,6 @@ void ModbusSlaveProcessReceivedQuery(void)
     if(modbusSlaveData.ModbusFrame[i] != (crcModbusSlave>>8))
     {
         modbusSlaveData.flags.bitValue.error = 1;
-        return;
-    }
-
-    if(modbusSlaveData.ModbusFrame[0] != modbusSlaveData.address)
-    {
         return;
     }
     modbusSlaveData.TotalTxValue = 0;

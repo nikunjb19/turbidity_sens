@@ -9,11 +9,11 @@
 ### Memory Usage ###
  Intel Hex-file ranges:
   0h - 306Fh		(dist/default/production\sense_mbus.X.production.hex)
-  34EEh - 403Fh		(dist/default/production\sense_mbus.X.production.hex)
+  34E2h - 403Fh		(dist/default/production\sense_mbus.X.production.hex)
   10000h - 10007h		(dist/default/production\sense_mbus.X.production.hex)
   1000Eh - 10011h		(dist/default/production\sense_mbus.X.production.hex)
  Unused ranges:
-  3070h - 34EDh
+  3070h - 34E1h
   4040h - FFFFh
   10008h - 1000Dh
 
@@ -800,7 +800,7 @@
 00003050 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00003060 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 ----------------------------------------------------------
-000034E0 | -- -- -- -- -- -- -- -- -- -- -- -- -- -- H1 H1
+000034E0 | -- -- H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000034F0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00003500 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00003510 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
